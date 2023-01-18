@@ -12,3 +12,19 @@ For Adressa, which contains a large number of Norwegian news in conjunction with
 
 
 > ![image](https://user-images.githubusercontent.com/54279688/213063328-47314f63-79bc-4a10-93ec-eb882fbd084e.png)
+
+## Evaluation Metrics
+We performed top-*N* recommendations and used the following three measures to evaluate the recommendation accuracy: AUC; MRR; and NDCG. 
+First, we employed *Area Under Curve* (AUC) that is computed by:
+
+> ![image](https://user-images.githubusercontent.com/54279688/213065609-67fbdc22-2e58-4178-9e60-634fe81b82f9.png)
+
+where $\mathcal{E}$ denotes a set of test entries; $E$ indicates a test entry that includes a ground-truth news and 20 negative news; ${rank_{gt}}$ indicates the ranking of the ground-truth in $E$ predicted by the trained model. Each test entry consists of 1 positive news and 20 negative news.
+
+Second, we employed *Mean Reciprocal Rank* (MRR) which reflects the average inversed rankings of the ground-truth with the following equation:
+
+> ![image](https://user-images.githubusercontent.com/54279688/213065744-3924537d-062b-4b92-9375-4c4ff07d6177.png)                                     
+
+Finally, we employed *Normalized Discounted Cumulative Gain* (NDCG) to reflect the importance of ranked positions of ground-truth, which is computed as follows:
+
+> ![image](https://user-images.githubusercontent.com/54279688/213065819-e25e3f8f-e291-4df0-a82b-2e660514f8cd.png)
